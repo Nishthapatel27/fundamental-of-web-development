@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pet Adoption Center</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .pet { border: 2px solid #ccc; margin: 10px; padding: 15px; }
+        .available { border-color: green; }
+        .adopted { border-color: red; opacity: 0.5; }
+    </style>
+</head>
+<body>
+    <h1>Happy Paws Adoption Center</h1>
+    <div id="pet-list"></div>
+    
+    <script>
+        let pets = [
+           { name: "Garfield", type: "cat", age: 3, adopted: false},
+           {name: "Coco", type:"dog", age: 2, adopted: false},
+           {name: "Kitty", type:"cat", age: 4,adopted: false},
+           {name: "Bob", type:"dog", age: 3, adopted: false},
+
+           
+        
+        ];
+        function displayPet(pet) {
+            let cssClass = pet.adopted ? "pet adopted" : "pet available";
+            let html = `<div class ="${cssClass}">
+                pet name is <h2>${pet.name}</h2>
+                <p>Type:${pet.type}</p>
+                <p>Age:${pet.age}</p>
+                <p>status:${pet.adopted ? "Adopted" : "Available for adoption"}</p>
+                </div>`;
+
+
+                return html;
+            }
+            function showAllpets(pets){
+               const container = document.getElementById("pet-list")
+               for (const pet of pets)
+               {
+               container.innerHTML += displayPet(pet);
+               }
+            }
+
+            function adoptpet(petName){
+                for(let pet of pets){
+                    if(pet.name ===petName){
+                        pet.adopted = true;
+                        break;
+                    }
+                }
+                showAllpets(pets);
+
+            }
+
+            showAllpets(pets);
+            adoptpet("Garfield");
+
+            
+            
+           
+    
+
+
+    </script>
+</body>
+</html>
