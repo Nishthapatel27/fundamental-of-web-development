@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>"Hawks 2025 season results"</h3>
+    <table id="team"></table>
+
+    <script>
+      let games = [
+        {
+          gameDate: "2025-08-15",
+          gameLocation: "State Farm Arena",
+          hawksScore: 112,
+          opponentName: "Lakers",
+          opponentScore: 108,
+          hawksWin: true
+        },
+        {
+          gameDate: "2025-08-17",
+          gameLocation: "Madison Square Garden",
+          hawksScore: 98,
+          opponentName: "Knicks",
+          opponentScore: 105,
+          hawksWin: false
+        },
+        {
+          gameDate: "2025-08-19",
+          gameLocation: "Chase Center",
+          hawksScore: 121,
+          opponentName: "Warriors",
+          opponentScore: 120,
+          hawksWin: true
+        },
+      ];
+      function displaygame(game) {
+        let html = `<tr><td>${game.gameDate}</td><td>${game.gameLocation}</td><td>${game.hawksScore}</td><td>${game.opponentName}</td><td>${game.opponentScore}</td></tr>`;
+
+        return html;
+      }
+      function showAllteams(games) {
+        const container = document.getElementById("team");
+        for (const game of games) {
+          container.innerHTML += displaygame(game);
+        }
+      }
+      showAllteams(games);
+    </script>
+  </body>
+</html>
