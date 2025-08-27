@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Quize</title>
+</head>
+<body>
+    <h1>My Awesome Quiz</h1>
+    <form id="quiz-form">
+        <!-- Add your questions here -->
+         <fildest class="question">
+            <p>what's your fav color?</p>
+            <input type="radio" name="q1" value="red" id="red">
+            <lable for="red">Red</lable>
+            <input type="radio" name="q1" value="blue" id="blue">
+            <lable for="blue">Blue</lable>
+            <input type="radio" name="q1" value="green" id="green">
+            <lable for="green">Green</lable>
+            
+         </fildest>
+         
+         <div class="question">
+            <!--checkbox example-->
+            <p>what topics will be the SBA?</p>
+            <input type="checkbox" id="html"name="sba-topic" value="html">
+            <lable for="html">HTML</lable>
+            <input type="checkbox" id="html"name="sba-topic" value="css">
+            <lable for="css">CSS</lable>
+            <input type="checkbox" id="html"name="sba-topic" value="javascript">
+            <lable for="javascript">JAVASCRIPT</lable>
+            <input type="checkbox" id="html"name="sba-topic" value="svelte">
+            <lable for="svelte">SVELTE</lable>
+            
+         </div>
+         <div class="question">
+            <p>what is your fav subject?</p>
+            <label for="subject">Enter Subject Name:</label>
+            <input type="text" id="subject" name="subject" required>
+
+         </div>
+        
+        <button type="submit" id="submit-btn">Check Answers</button>
+    </form>
+    <div id="results"></div>
+    <script src ="script.js"></script>
+    
+    <!-- Attach your script here -->
+    
+</body>
+</html>
